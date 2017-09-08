@@ -1,0 +1,29 @@
+---
+language: php
+php:
+  - 7.0
+  - 7.1
+
+addons:
+    code_climate:
+        repo_token: $CODECLIMATE_API_TOKEN
+
+cache:
+  directories:
+    - ~/.composer/cache
+
+sudo: false
+dist: trusty
+
+install: composer install
+
+before_script:
+  - travis_retry composer self-update 
+  - composer require codeclimate/php-test-reporter --dev
+
+script:
+  - vendor/bin/phpunit --debug
+
+#after_success:
+#  - bash <(curl -s https://codecov.io/bash)
+#  - vendor/bin/test-reporter
