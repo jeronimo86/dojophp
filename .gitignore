@@ -1,3 +1,10 @@
+#Composer
 /vendor/
+composer.lock
 *.log
+
 exercicio.php
+
+/.ideia/
+/build/
+ 896188c9ea8cce17f7177f2972dd9851b1ba81ac
